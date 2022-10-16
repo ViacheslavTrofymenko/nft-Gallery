@@ -20,7 +20,7 @@ const Home = () => {
     };
    
   if (!collection.length) {
-    const fetchURL = `${baseURL}?owner=${wallet}&pageKey=${"next"}`;
+    const fetchURL = `${baseURL}?owner=${wallet}&pageKey=${"1"}`;
 
     nfts = await fetch(fetchURL, requestOptions).then(data => data.json())
   } else {
@@ -43,7 +43,7 @@ const fetchNFTsForCollection = async () => {
   };
   const api_key = "ZwAkbmP5OhOFIV4zFwEG4NyWR6wQV6-E"
   const baseURL = `https://eth-mainnet.alchemyapi.io/v2/${api_key}/getNFTsForCollection/`;
-  const fetchURL = `${baseURL}?contractAddress=${collection}&withMetadata=${"true"}&pageKey=${"next"}`;
+  const fetchURL = `${baseURL}?contractAddress=${collection}&withMetadata=${"true"}&pageKey=${"1"}&pageSize=${200}`;
   const nfts= await fetch(fetchURL, requestOptions).then(data => data.json())
   if (nfts) {
     console.log("NFTs in collection:", nfts)

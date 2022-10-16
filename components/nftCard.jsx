@@ -12,7 +12,7 @@ export const NFTCard = ({ nft }) => {
                 <h2 className="text-xl text-gray-800">{nft.title}</h2>
                 <p className="text-gray-600">Id: {nft.id.tokenId.substr(nft.id.tokenId.length-4)}</p>
                 <p className="text-gray-600" >Contract Address: {`${nft.contract.address.substr(0, 6)}...${nft.contract.address.substr(nft.contract.address.length -4)}`}
-                <CopyClipboard onClick />
+                <CopyClipboard content={nft.contract.address}/>
                 </p>
             </div>
 
